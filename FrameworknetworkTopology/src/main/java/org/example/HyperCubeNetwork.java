@@ -21,7 +21,7 @@ public class HyperCubeNetwork implements NetworkTopology{
     // Crea y combina los nodos creando un HyperCube, dado el tamaño de la dimension
     private void createHyperCubeNetwork(int dimensionSize) {
 
-        for (int i = 0; i < dimensionSize * dimensionSize; i++) {
+        for (int i = 0; i < Math.pow(2, dimensionSize); i++) {
             HyperCubeNode node = new HyperCubeNode(i,"Nodo"+String.valueOf(i), this);
             nodes.add(node);
         }

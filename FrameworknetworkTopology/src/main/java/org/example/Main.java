@@ -8,8 +8,8 @@ public class Main {
         //busNet();
         // ringNet();
         //meshNet();
-        // hyperCubeNet();
-        switchedNet();
+        hyperCubeNet();
+        //switchedNet();
     }
     public static void busNet(){
         List<Node> nodes = List.of(new Node(0, "A"), new Node(1, "B"), new Node(2, "C"));
