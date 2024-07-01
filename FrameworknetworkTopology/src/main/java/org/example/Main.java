@@ -8,7 +8,8 @@ public class Main {
         //busNet();
         // ringNet();
         //meshNet();
-        hyperCubeNet();
+        // hyperCubeNet();
+        switchedNet();
     }
     public static void busNet(){
         List<Node> nodes = List.of(new Node(0, "A"), new Node(1, "B"), new Node(2, "C"));
@@ -100,12 +101,46 @@ public class Main {
         }
 
         try{
-            Thread.sleep(30000);
+            Thread.sleep(20000);
         }catch (Exception e){
             e.printStackTrace();
         }
         System.out.println("Stop HyperCube Network");
         hyperCubeNetwork.stopNet();
+
+
+    }
+
+    public static void switchedNet(){
+
+        SwitchedNetwork switchedNetwork = new SwitchedNetwork(10);
+        switchedNetwork.runNet();
+
+        try{
+            switchedNetwork.getNodes().getFirst().sendMessage(7, "Hola esde 0.");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+        try{
+            switchedNetwork.getNodes().getFirst().sendMessage(8, "Hola desde 0 a 8.");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+        try{
+            switchedNetwork.getNodes().getFirst().sendMessage(4, "Hola desde 0 otra vez.");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+        try{
+            Thread.sleep(10000);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        System.out.println("Stop Switched Network");
+        switchedNetwork.stopNet();
 
 
     }
