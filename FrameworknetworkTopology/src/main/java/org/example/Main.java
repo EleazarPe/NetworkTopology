@@ -4,9 +4,11 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        treeNet();
-//      busNet();
-//      ringNet();
+        //treeNet();
+        //busNet();
+        // ringNet();
+        //meshNet();
+        hyperCubeNet();
     }
     public static void busNet(){
         List<Node> nodes = List.of(new Node(0, "A"), new Node(1, "B"), new Node(2, "C"));
@@ -85,5 +87,26 @@ public class Main {
             e.printStackTrace();
         }
         treeNetwork.stopNet();
+    }
+
+    public static void hyperCubeNet(){
+        HyperCubeNetwork hyperCubeNetwork = new HyperCubeNetwork(3);
+        hyperCubeNetwork.runNet();
+
+        try{
+            hyperCubeNetwork.sendMessage(0,7, "Hola...");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+        try{
+            Thread.sleep(30000);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        System.out.println("Stop HyperCube Network");
+        hyperCubeNetwork.stopNet();
+
+
     }
 }

@@ -57,9 +57,9 @@ public class TreeNode implements Runnable {
         for (TreeNode child : children) {
             child.receiveMessage("Message from Node " + id + ": " + message);
         }
-        if (parent != null) {
+        /*if (parent != null) {
             parent.receiveMessage("Message from Node " + id + ": " + message);
-        }
+        }*/
     }
 }
 
