@@ -4,12 +4,13 @@ Para esta practica nos toco crear un framework para facilitar el uso de Topologi
 
 Nos toco hacer las siguientes Topologias:
 - Bus
-- HyperCube
-- Mesh
 - Ring
+- Mesh
 - Star
-- Switched
+- HyperCube
 - Tree
+- Fully
+- Switched
 
 Para ver como funciona hemos creado funciones en la clase main que pueden correrse por si solas, esto deberia dar una idea de como funciona cada implementacion de la topologia. Veamos un ejemplo.
 
