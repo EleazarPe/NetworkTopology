@@ -17,7 +17,8 @@ Para ver como funciona hemos creado funciones en la clase main que pueden correr
 Si quiero correr HyperCube, entro a main y descomento 
 // hyperCubeNet();
 
-![image](https://github.com/EleazarPe/NetworkTopology/assets/132306836/d3ed782b-8e20-402a-99eb-70a53243bece)
+![image](https://github.com/EleazarPe/NetworkTopology/assets/71235444/52ea9646-557b-4fed-9be6-81d5feed38ac)
+
 
 
 Es bueno correr uno a la vez para ver una mejor salida. Esta en especifico esta configurada para crear una hypercube de 3 dimensiones, por tanto hay 8 nodos.
