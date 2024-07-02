@@ -4,11 +4,14 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        //treeNet();
-        //busNet();
-        // ringNet();
+        /* Descomentar la topologia que se desea utilizar */
+        busNet();
+        //ringNet();
         //meshNet();
-        hyperCubeNet();
+        //starNet();
+        //hyperCubeNet();
+        //treeNet();
+        //fullNet();
         //switchedNet();
     }
     public static void busNet(){
@@ -16,9 +19,9 @@ public class Main {
         BusNetwork busNetwork = new BusNetwork(nodes);
         System.out.println("Bus Network");
         busNetwork.runNet();
-        busNetwork.sendMessage(0, 1, "Hola");
-        busNetwork.sendMessage(0, 2, "paco");
-        busNetwork.sendMessage(0, 0, "Manolo");
+        busNetwork.sendMessage(0, 1, "MENSAJE1");
+        busNetwork.sendMessage(0, 2, "MENSAJE2");
+        busNetwork.sendMessage(0, 0, "MENSAJE3");
         busNetwork.stopNet();
     }
     public static void ringNet(){
@@ -28,8 +31,8 @@ public class Main {
         nodes.get(2).setVecinos(List.of(nodes.get(0)));
         RingNetwork ringNetwork = new RingNetwork(nodes);
         ringNetwork.runNet();
-        ringNetwork.sendMessage(2, 1, "ELMEJOR");
-        ringNetwork.sendMessage(0, 2, "SUPREMA");
+        ringNetwork.sendMessage(2, 1, "MENSAJE1");
+        ringNetwork.sendMessage(0, 2, "MEANSAJE2");
         ringNetwork.stopNet();
     }
     public static void meshNet(){
@@ -47,6 +50,22 @@ public class Main {
         meshNetwork.sendMessage(1, 2, "MENSAJE2");
         meshNetwork.sendMessage(1, 0, "MENSAJE3");
         meshNetwork.stopNet();
+    }
+    public static void fullNet(){
+        List<Node> nodes = List.of(new Node(0, "A"), new Node(1, "B"), new Node(2, "C"));
+        for (Node node : nodes) {
+            for (Node vecino : nodes) {
+                if (node.getId() != vecino.getId()) {
+                    node.addVecino(vecino);
+                }
+            }
+        }
+        FullyConectedNetwork fullyConectedNetwork = new FullyConectedNetwork(nodes);
+        fullyConectedNetwork.runNet();
+        fullyConectedNetwork.sendMessage(2, 1, "MENSAJE1");
+        fullyConectedNetwork.sendMessage(1, 2, "MENSAJE2");
+        fullyConectedNetwork.sendMessage(1, 0, "MENSAJE3");
+        fullyConectedNetwork.stopNet();
     }
     public static void starNet(){
         List<Node> nodes = List.of(new Node(-1, "Central"),new Node(0, "A"), new Node(1, "B"), new Node(2, "C"));
